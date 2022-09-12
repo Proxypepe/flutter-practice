@@ -1,6 +1,4 @@
 import 'package:cooking_recipe/presentation/navigation/app_navigation.dart';
-import 'package:cooking_recipe/presentation/screens/widgets/search_line.dart';
-import 'package:cooking_recipe/presentation/widgets/recipe_card.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cooking_recipe/presentation/widgets/tag.dart';
 import 'package:flutter/material.dart';
 
 class RecipeCard extends StatelessWidget {
@@ -37,8 +37,15 @@ class RecipeCard extends StatelessWidget {
                   ],
                 ),
               ),
+              Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Column(children: const <Widget>[
+                    Tag(tag: "Beef"),
+                    Tag(tag: "Fire"),
+                  ]))
             ],
           ),
-        ));
+        )
+    );
   }
 }
