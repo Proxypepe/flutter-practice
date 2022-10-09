@@ -1,6 +1,8 @@
 import 'package:cooking_recipe/presentation/screens/home/home.dart';
 import 'package:flutter/material.dart';
 
+import '../screens/settings/setting.dart';
+
 class AppNavigation extends StatefulWidget {
   const AppNavigation({Key? key}) : super(key: key);
 
@@ -16,9 +18,7 @@ class _AppNavigationState extends State<AppNavigation> {
     Text(
       'Index 1: favorite',
     ),
-    Text(
-      'Index 2: Settings',
-    ),
+    SettingsScreen(),
   ];
 
   void _onItemTapped(int index) {
