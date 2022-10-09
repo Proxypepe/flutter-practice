@@ -1,6 +1,7 @@
 import 'package:cooking_recipe/presentation/screens/home/home.dart';
 import 'package:flutter/material.dart';
 
+import '../screens/detailed/detailed.dart';
 import '../screens/settings/setting.dart';
 
 class AppNavigation extends StatefulWidget {
@@ -15,9 +16,7 @@ class _AppNavigationState extends State<AppNavigation> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    Text(
-      'Index 1: favorite',
-    ),
+    DetailedScreen(),
     SettingsScreen(),
   ];
 
