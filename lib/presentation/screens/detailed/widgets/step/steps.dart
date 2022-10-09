@@ -11,12 +11,12 @@ class StepsSection extends StatelessWidget {
           children: const <Widget>[
             Text(
                 "Steps",
-                style: const TextStyle(fontWeight: FontWeight.bold)
+                style: TextStyle(fontWeight: FontWeight.bold)
             ),
             StepLine(
               stepDescription: "First step description",
               stepNumber: 1,
-            )
+            ),
           ]
       )
     );

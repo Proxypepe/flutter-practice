@@ -22,16 +22,18 @@ class DetailedScreen extends StatelessWidget {
           )
         ],
       ),
-      body: Column(
-        children: const <Widget>[
-          HeadSection(
-            prepare: '15 min',
-            cooking: '4 hs',
-            description: 'some description',
+      body: SingleChildScrollView(
+          child: Column(
+              children: const <Widget>[
+                HeadSection(
+                  prepare: '15 min',
+                  cooking: '4 hs',
+                  description: 'some description',
+                ),
+                IngredientsSection(),
+                StepsSection(),
+              ]
           ),
-          IngredientsSection(),
-          StepsSection(),
-        ]
       )
     );
   }
