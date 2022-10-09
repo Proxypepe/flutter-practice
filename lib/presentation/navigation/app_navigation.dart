@@ -1,8 +1,7 @@
-import 'package:cooking_recipe/presentation/screens/home.dart';
+import 'package:cooking_recipe/presentation/screens/home/home.dart';
 import 'package:flutter/material.dart';
 
-class AppNavigation extends StatefulWidget  {
-
+class AppNavigation extends StatefulWidget {
   const AppNavigation({Key? key}) : super(key: key);
 
   @override
@@ -15,10 +14,10 @@ class _AppNavigationState extends State<AppNavigation> {
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     Text(
-      'Index 1: Business',
+      'Index 1: favorite',
     ),
     Text(
-      'Index 2: School',
+      'Index 2: Settings',
     ),
   ];
 
@@ -31,7 +30,6 @@ class _AppNavigationState extends State<AppNavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),

@@ -1,5 +1,5 @@
-import 'package:cooking_recipe/presentation/screens/widgets/search_line.dart';
-import 'package:cooking_recipe/presentation/widgets/recipe_card.dart';
+import 'package:cooking_recipe/presentation/screens/home/widgets/search_line.dart';
+import 'package:cooking_recipe/presentation/screens/widgets/recipe_card.dart';
 import 'package:flutter/cupertino.dart';
 
 class HomeScreen extends StatefulWidget {

@@ -1,4 +1,4 @@
-import 'package:cooking_recipe/presentation/widgets/tag.dart';
+import 'package:cooking_recipe/presentation/screens/widgets/tag.dart';
 import 'package:flutter/material.dart';
 
 class RecipeCard extends StatelessWidget {
@@ -10,7 +10,7 @@ class RecipeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
         margin: const EdgeInsets.all(10),
-        elevation: 20,
+        elevation: 10,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(8))),
         shadowColor: Colors.green[100],
