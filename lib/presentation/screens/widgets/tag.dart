@@ -16,8 +16,14 @@ class Tag extends StatelessWidget {
               ),
               borderRadius: const BorderRadius.all(Radius.circular(8))),
           child: Padding(
-            padding: const EdgeInsets.all(2),
-            child: Text(tag),
+            padding: const EdgeInsets.all(3),
+            child: SizedBox(
+                width: 50.0,
+                child: Text(tag,
+                overflow: TextOverflow.fade,
+                    textAlign: TextAlign.center
+                )
+            ),
           ),
       ),
     );

@@ -1,10 +1,16 @@
 import 'package:cooking_recipe/presentation/screens/widgets/tag.dart';
 import 'package:flutter/material.dart';
 
+import '../../../data/remote/model/full_recipe.dart';
+
 class RecipeCard extends StatelessWidget {
-  const RecipeCard({
-    Key? key,
-  }) : super(key: key);
+  const RecipeCard({Key? key, required this.recipe}) : super(key: key);
+
+  final FullRecipe recipe;
+
+  Widget getTags(List<String> tags) {
+    return Column(children: tags.map((item) => Tag(tag: item)).toList());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,24 +34,27 @@ class RecipeCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
-                  children: const <Widget>[
-                    Text('Name: '),
-                    Text('Prep: '),
-                    Text('Cook: '),
-                    Text('Steps: '),
-                    Text('Ingredients: '),
+                  children: <Widget>[
+                    SizedBox(
+                      width: 150.0,
+                      child: Text(
+                      'Name: ${recipe.name}',
+                     overflow: TextOverflow.fade,
+                      ),
+                ),
+                    Text('Prep: ${recipe.prepare}'),
+                    Text('Cook: ${recipe.cook}'),
+                    Text('Steps: ${recipe.steps}'),
+                    Text('Ingredients: ${recipe.ingredients}'),
                   ],
                 ),
               ),
               Padding(
                   padding: const EdgeInsets.only(left: 10),
-                  child: Column(children: const <Widget>[
-                    Tag(tag: "Beef"),
-                    Tag(tag: "Fire"),
-                  ]))
+                  child: getTags(recipe.tags!)
+              )
             ],
           ),
-        )
-    );
+        ));
   }
 }
