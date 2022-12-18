@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:async';
 
-import 'package:cooking_recipe/data/local/recipe_entity.dart';
+import 'package:cooking_recipe/data/local/pure/recipe_entity.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';

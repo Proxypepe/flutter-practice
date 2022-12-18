@@ -1,7 +1,9 @@
-import 'package:cooking_recipe/data/local/recipe_entity.dart';
+import 'package:cooking_recipe/data/local/pure/recipe_entity.dart';
 import 'package:sqflite/sqflite.dart';
 
-import 'Database.dart';
+import 'database.dart';
+
+
 const String idTitle = "id";
 const String nameTitle = "name";
 const String descriptionTitle = "description";

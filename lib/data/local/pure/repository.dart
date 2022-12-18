@@ -1,4 +1,4 @@
-import 'package:cooking_recipe/data/local/recipe_entity.dart';
+import 'package:cooking_recipe/data/local/pure/recipe_entity.dart';
 import 'database_controller.dart';
 
 class Repository{

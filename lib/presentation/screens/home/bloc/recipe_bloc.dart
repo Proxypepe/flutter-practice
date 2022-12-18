@@ -1,5 +1,4 @@
-import 'package:cooking_recipe/data/local/recipe_entity.dart';
-import 'package:cooking_recipe/data/local/repository.dart';
+import 'package:cooking_recipe/data/local/floor/database.dart';
 import 'package:cooking_recipe/presentation/screens/home/bloc/recipe_event.dart';
 import 'package:cooking_recipe/presentation/screens/home/bloc/recipe_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,7 +8,7 @@ import '../../../../domain/usecase/get_fullrecipes.dart';
 class RecipeBloc
     extends Bloc<RecipeEvent, RecipeState> {
   final GetFullRecipes _getFullRecipes;
-  final Repository repository = Repository();
+  // final Repository repository = Repository();
 
 
   RecipeBloc(this._getFullRecipes)
@@ -24,21 +23,25 @@ class RecipeBloc
     emit(const RecipeLoadingState());
 
     try {
+      final database = await $FloorAppDatabase.databaseBuilder('app_database.db').build();
+      final recipeDao = database.recipeDao;
       final result = await _getFullRecipes(
           const Params());
+      // recipeDao.insertRecipe(
+      //     RecipeEntity(
+      //         "name",
+      //         "description",
+      //         "prepare",
+      //         "cook",
+      //         9,
+      //         5,
+      //         "fileName",
+      //         ""
+      //     )
+      // );
+      final recipes = await recipeDao.findAllRecipes();
 
-      // repository.insertRecipe(RecipeEntity(
-      //     name: "name",
-      //     description: "description",
-      //     prepare: "prepare",
-      //     cook: "cook",
-      //     ingredients: 9,
-      //     steps: 5,
-      //     fileName: "some_file.png",
-      //     tags: ["beef"]
-      // ));
-      final recipes = await repository.getRecipes();
-      print(recipes[0].toString());
+      print(recipes);
 
       emit(result.fold((l) => null,
               (r) => RecipeSuccessState(recipes: r))!);
